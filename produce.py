@@ -3,6 +3,7 @@ import pandas as pd
 from kafka import KafkaProducer
 from json import dumps
 import requests
+import config
 
 
 def kafka_producer():
@@ -17,7 +18,7 @@ def kafka_producer():
     location = [rome, antarctica, cairo]
 
     exclude = 'minutely,hourly,daily,alerts'
-    APIkey = '2f87882d231da0d6cead66fa10196364'
+    APIkey = config.APIkey
 
     t_end = time.time() + 10 * 1  # Amount of time data is sent for in seconds
     while time.time() < t_end:
